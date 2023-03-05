@@ -16,7 +16,7 @@ A = sparse(diag(1./L));
 B = sparse(Edges(2,:), Edges(1,:),1,N,N);
 
 %L(i) wyznaczam dzięki wczesniej obliczonej macierzy B
-%L(i) -> liczba linków wychodzących ze strony i-tej
+%L(i) -> liczba linków wychodzacych ze strony i-tej
 L = zeros(1,N);
 
 for i = 1:N
