@@ -15,8 +15,7 @@ y = [];%zapamietana wartosc Y okregu
 r = [];%zapamietana wartosc R okregu
 
 count = 0;%liczba prob losowania kolka
-all_area = [];
-areas = [];
+all_area = [];%powierzchnia calkowita
 counter = [];
 
 while (n <= n_max)% wartosc jest mniejsza od maksymalnej
@@ -50,7 +49,6 @@ while (n <= n_max)% wartosc jest mniejsza od maksymalnej
         y(n) = Y;
         r(n) = R;
         area = pi*R*R;
-        areas(n) = area;
         if(n==1)
             all_area(n) = area;
         else
@@ -69,19 +67,19 @@ while (n <= n_max)% wartosc jest mniejsza od maksymalnej
 end
 hold off
 
-%title("Wykres powierzchni calkowitej w zaleznosci od ilosci pecherzykow");
-%figure("Name", "Powierzchnia Całkowita");
-%semilogx(all_area);
-%xlabel("Liczba pęcherzyków");
-%ylabel("Powierzchnia calkowita");
-%saveas(gcf, "wykres1.png");
+title("Wykres powierzchni calkowitej w zaleznosci od ilosci pecherzykow");
+figure("Name", "Powierzchnia Całkowita");
+semilogx(all_area);
+xlabel("Liczba pęcherzyków");
+ylabel("Powierzchnia calkowita");
+saveas(gcf, "wykres1.png");
 
-%title("Wykres średniej liczby losowań wielkości pęcherzyków");
-%figure("Name", "Średnia liczba losowań");
-%loglog(cumsum(counter)./linspace(1, n, n));
-%xlabel("Liczba pęcherzyków");
-%ylabel("Średnia liczba losowań");
-%saveas(gcf, "wykres2.png");
+title("Wykres średniej liczby losowań wielkości pęcherzyków");
+figure("Name", "Średnia liczba losowań");
+loglog(cumsum(counter)./linspace(1, n, n));
+xlabel("Liczba pęcherzyków");
+ylabel("Średnia liczba losowań");
+saveas(gcf, "wykres2.png");
 
 function plot_circ(X, Y, R)
 theta = linspace(0,2*pi);
@@ -89,4 +87,3 @@ x = R*cos(theta) + X;
 y = R*sin(theta) + Y;
 plot(x,y)
 end
-
