@@ -15,8 +15,8 @@ y = [];%zapamietana wartosc Y okregu
 r = [];%zapamietana wartosc R okregu
 
 count = 0;%liczba prob losowania kolka
-all_area = [];%powierzchnia calkowita
-counter = [];
+all_area = [];%tablica do przechowywania powierzchni calkowitej
+counter = [];%tablica do przechowywania zliczania prob
 
 while (n <= n_max)% wartosc jest mniejsza od maksymalnej
     fit = false;%ustawiam flage na false->zakladam,ze nie pasuje
