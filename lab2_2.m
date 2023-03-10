@@ -25,7 +25,7 @@ while (n <= n_max)% wartosc jest mniejsza od maksymalnej
     fit = false;%ustawiam flage na false->zakladam,ze nie pasuje
     while(fit == false)
         X = rand(1) * a;% rand(1)->wybiera liczbe miedzy 0 a 1
-        Y = rand(1) * a;% CZY TUTAJ PROMIEN JEST LOSOWANY Z ZAKRESU 0,N_MAX?
+        Y = rand(1) * a;
         R = rand(1) * r_max; % rand(5) -> wyrzuci macierz 5x5 z warosciami od 0 do 1?
         X_LEFT = X - R;
         X_RIGHT = X + R;
@@ -73,7 +73,7 @@ hold off
 
 title("Wykres powierzchni calkowitej w zaleznosci od ilosci pecherzykow");
 figure("Name", "Powierzchnia całkowita kół");
-cumsum(all_area);
+%plot(cumsum(200,all_area));
 xlabel("Liczba narysowanych okregów");
 ylabel("Powierzchnia");
 saveas(gcf, "wykres1.png");
