@@ -70,18 +70,22 @@ while (n <= n_max)% wartosc jest mniejsza od maksymalnej
 
 end
 hold off
-
-title("Wykres powierzchni calkowitej w zaleznosci od ilosci pecherzykow");
-figure("Name", "Powierzchnia całkowita kół");
-%plot(cumsum(200,all_area));
-xlabel("Liczba narysowanych okregów");
-ylabel("Powierzchnia");
-saveas(gcf, "wykres1.png");
+title("Pęcherzyki w kwadracie");
+xlabel("Bok kwadratu");
+ylabel("Bok kwadratu");
 
 
-title("Wykres średniej liczby losowań wielkości pęcherzyków");
+%figure("Name", "Powierzchnia całkowita kół");
+%plot(cumsum(all_area)./linspace(1,n,n));
+%title("Wykres powierzchni calkowitej w zaleznosci od ilosci pecherzykow");
+%xlabel("Liczba narysowanych okregów");
+%ylabel("Powierzchnia");
+%saveas(gcf, "wykres1.png");
+
+
 figure("Name", "Średnia liczba losowań");%nowe okno wykresu
-loglog(cumsum(counter)./linspace(1, n, n));%suma skumulowana
+plot(cumsum(counter)./linspace(1, n, n));%suma skumulowana
+title("Wykres średniej liczby losowań wielkości pęcherzyków");
 xlabel("Liczba narysowanych okregow");
 ylabel("Liczba losowań");
 saveas(gcf, "wykres2.png");
